@@ -12,3 +12,11 @@ void main() {
     expect(result, equals(expectedOutput));
   });
 }
+
+String runCalculaIMC(String input) {
+  final process = Process.start('dart', ['calcula_imc.dart'], runInShell: true);
+  process.stdin.write(input);
+  process.stdin.close();
+
+  return process.stdout.transform(utf8.decoder).join();
+}

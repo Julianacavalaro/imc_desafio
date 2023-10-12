@@ -1,7 +1,7 @@
 import 'dart:convert';
 import 'dart:io';
 
-void calculaIMC(){
+void execute(){
 
 bool isAlpha(String input) {
   if (input == null || input.isEmpty) {
