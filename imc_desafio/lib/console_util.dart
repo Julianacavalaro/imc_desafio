@@ -21,8 +21,10 @@ class ConsoleUtils {
     }
   }
 
+
   static double? lerDoubleComTexto(String texto) {
     print(texto);
     return lerDouble();
   }
+
 }
