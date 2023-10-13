@@ -1,12 +1,12 @@
 class Pessoa {
-  String? _nome;
+  String? _nome= "";
   double? _altura;
   double? _peso;
  
   Pessoa(
     this._nome,
-    this._altura,
-    this._peso,
+    // this._altura,
+    // this._peso,
   );
 
   void setNome(String nome){
