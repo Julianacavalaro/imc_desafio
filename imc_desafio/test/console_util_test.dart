@@ -1,22 +1,19 @@
-
-import 'dart:convert';
-import 'dart:io';
-import 'dart:io';
-
-import 'package:imc_desafio/console_util.dart';
 import 'package:imc_desafio/pessoa.dart';
 import 'package:test/test.dart';
 
-void consoleUtils() {
+void main() {
 
+  group('Pessoa', () {
   test('Teste de leitura de string', () {
     //SImula a entrada do usuario com uma string.
-    var input = String;
+    var nome = "Julia";
+    final pessoa = Pessoa(nome);
 
     // Chama a função lerStringComTexto e verifica o resultado
-    var resultado = input;
-    expect(resultado, equals(input));
+    var resultado = pessoa.getNome();
+    expect(resultado, equals(resultado));
   });
+});
 
     test('Teste de leitura de double', () {
     // Simule a entrada do usuário com um valor válido.

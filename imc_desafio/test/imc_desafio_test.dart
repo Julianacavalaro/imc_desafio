@@ -1,22 +1,32 @@
-// import 'dart:convert';
-// import 'dart:io';
 
-// import 'package:test/test.dart';
+import 'package:imc_desafio/calculaImc.dart';
+import 'package:imc_desafio/pessoa.dart';
+import 'package:test/test.dart';
 
-// // void main() {
-// //   test('Teste com valores válidos', () {
-// //     final input = 'Alice\n70\n1.75\n';
-// //     final expectedOutput = 'Seu IMC e igual a: 22.86\nSaudavel\n';
+void main() {
 
-// //     final result = runCalculaIMC(input);
-// //     expect(result, equals(expectedOutput));
-// //   });
-// // }
+  group('Pessoa', () {
+    test('Teste de criação de pessoa', () {
+      final nome = 'Alice';
+      final pessoa = Pessoa(nome);
+      expect(pessoa.getNome(), equals(nome));
+    });
+  });
 
-// // String runCalculaIMC(String input) {
-// //   final process = Process.start('dart', ['calcula_imc.dart'], runInShell: true);
-// //   process.stdin.write(input);
-// //   process.stdin.close();
+  group('IMC', () {
+    test('Teste de cálculo de IMC', () {
+      final peso = 70.0;
+      final altura = 1.75;
+      final imcEsperado = 22.857142857142858;
+      expect(calculaIMC(peso, altura), equals(imcEsperado));
+    });
 
-// //   return process.stdout.transform(utf8.decoder).join();
-// //}
+    test('Teste de avaliação de IMC', () {
+      expect(avaliacaoIMC(15), equals("Magreza grave"));
+      expect(avaliacaoIMC(22.86), equals("Saudavel"));
+      expect(avaliacaoIMC(35), equals("Obesidade grau 2 - Severa"));
+      expect(() => avaliacaoIMC(-1), throwsArgumentError);
+    });
+
+  });
+}
