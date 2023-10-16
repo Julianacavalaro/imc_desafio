@@ -31,7 +31,7 @@ throw ArgumentError("Nome vazio");
   print("Qual e sua altura:");
   altura = ConsoleUtils.lerDouble();
   pessoa.setAltura(altura!);
-  // print("$altura");
+
   print("Seu nome: ${pessoa.getNome()}");
   print("Seu peso: ${pessoa.getPeso()}");
   print("Sua altura: ${pessoa.getAltura()}");

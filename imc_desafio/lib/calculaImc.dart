@@ -1,7 +1,4 @@
-
 import 'dart:io';
-
-
 
 double calculaIMC(peso, altura) {
   if (peso <= 0 || altura <= 0) {
@@ -12,19 +9,11 @@ double calculaIMC(peso, altura) {
   return imc;
 }
 
-String pegaNome(String nome) {
-  print('Digite seu nome: ');
-  String? nome = stdin.readLineSync();
-  if (nome == null) {
-    throw ArgumentError("Nome nulo, Digite um nome valido");
-  } else if (nome == "") {
-    throw ArgumentError("Nome vazio, Digite um nome valido");
-  }
-  return nome;
-}
-
 String avaliacaoIMC(double imc) {
-  if (imc < 16) {
+
+  if (imc <= 0) {
+    throw ArgumentError("Imc nao pode ser negativo");
+  } else if (imc < 16) {
     return "Magreza grave";
   } else if (imc >= 16 && imc < 17) {
     return "Magreza moderada";
@@ -35,11 +24,11 @@ String avaliacaoIMC(double imc) {
   } else if (imc >= 25 && imc < 30) {
     return "SobrePeso";
   } else if (imc >= 30 && imc < 35) {
-    return "Obsidade grau 1";
+    return "Obesidade grau 1";
   } else if (imc >= 35 && imc < 40) {
-    return "Obsidade grau 2 - Severa";
+    return "Obesidade grau 2 - Severa";
   } else if (imc >= 40) {
-    return "Obsidade grau 3 - Morbida";
+    return "Obesidade grau 3 - Morbida";
   } else {
     throw ArgumentError("Erro de calculo");
   }

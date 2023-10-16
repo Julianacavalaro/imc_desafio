@@ -9,6 +9,7 @@ class Pessoa {
     // this._peso,
   );
 
+
   void setNome(String nome){
     this._nome = nome;
   }
